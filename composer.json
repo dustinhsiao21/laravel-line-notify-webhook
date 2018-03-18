@@ -23,12 +23,12 @@
     },
     "autoload": {
     	"psr-4": {
-    		"DH21\\LineNotify\\":"src"
+    		"dustinhsiao21\\LineNotify\\":"src"
     	}
     },
     "autoload-dev": {
     	"psr-4": {
-			"DH21\\LineNotify\\Tests\\": "tests"
+			"dustinhsiao21\\LineNotify\\Tests\\": "tests"
     	}
     },
     "scripts": {

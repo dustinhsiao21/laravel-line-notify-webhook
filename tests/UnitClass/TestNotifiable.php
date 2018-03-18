@@ -1,6 +1,6 @@
 <?php
 
-namespace DH21\LineNotify\Tests\UnitClass;
+namespace dustinhsiao21\LineNotify\Tests\UnitClass;
 
 class TestNotifiable
 {

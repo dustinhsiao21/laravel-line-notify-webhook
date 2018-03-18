@@ -1,25 +1,31 @@
 <?php
 
-namespace DH21\LineNotify\Test;
+namespace dustinhsiao21\LineNotify\Test;
 
 use Mockery;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Orchestra\Testbench\TestCase;
 use Illuminate\Notifications\Notification;
-use DH21\LineNotify\LineMessage;
-use DH21\LineNotify\LineChannel;
-use DH21\LineNotify\Tests\UnitClass\TestNotifiable;
-use DH21\LineNotify\Tests\UnitClass\TestNotification;
+use dustinhsiao21\LineNotify\LineMessage;
+use dustinhsiao21\LineNotify\LineChannel;
+use dustinhsiao21\LineNotify\Tests\UnitClass\TestNotifiable;
+use dustinhsiao21\LineNotify\Tests\UnitClass\TestNotification;
 
 class LineChannelTest extends TestCase
 {
+    private $client;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->client = Mockery::mock(client::class);
+    }
     /** @test */
     public function testSend()
     {
         $response = new Response(200);
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('post')
+        $this->client->shouldReceive('post')
             ->once()
             ->with(LineChannel::END_POINT, [
                 'headers' => [
@@ -30,7 +36,8 @@ class LineChannelTest extends TestCase
                 ]
             ])
             ->andReturn($response);
-        $channel = new LineChannel($client);
+
+        $channel = new LineChannel($this->client);
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 
@@ -41,11 +48,11 @@ class LineChannelTest extends TestCase
     public function testSendFail()
     {
         $response = new Response(500);
-        $client = Mockery::mock(Client::class);
-        $client->shouldReceive('post')
+        $this->client->shouldReceive('post')
             ->once()
             ->andReturn($response);
-        $channel = new LineChannel($client);
+
+        $channel = new LineChannel($this->client);
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 }

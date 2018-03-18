@@ -1,9 +1,9 @@
 <?php
 
-namespace DH21\LineNotify\Tests\UnitClass;
+namespace dustinhsiao21\LineNotify\Tests\UnitClass;
 
 use Illuminate\Notifications\Notification;
-use DH21\LineNotify\LineMessage;
+use dustinhsiao21\LineNotify\LineMessage;
 
 class TestNotification extends Notification
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace DH21\LineNotify;
+namespace dustinhsiao21\LineNotify;
 
 use GuzzleHttp\Client;
 use Illuminate\Notifications\Notification;

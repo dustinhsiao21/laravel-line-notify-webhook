@@ -1,9 +1,9 @@
 <?php
 
-namespace DH21\LineNotify\Test;
+namespace dustinhsiao21\LineNotify\Test;
 
 use Orchestra\Testbench\TestCase;
-use DH21\LineNotify\LineMessage;
+use dustinhsiao21\LineNotify\LineMessage;
 
 class MessageTest extends TestCase
 {
