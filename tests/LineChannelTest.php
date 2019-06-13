@@ -21,6 +21,7 @@ class LineChannelTest extends TestCase
         parent::setUp();
         $this->client = Mockery::mock(client::class);
     }
+
     /** @test */
     public function testSend()
     {

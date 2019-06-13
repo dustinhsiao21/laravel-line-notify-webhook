@@ -6,7 +6,13 @@ class LineMessage
 {
     public $message;
 
-    public function message(string $message)
+    /**
+     * message
+     *
+     * @param string $message
+     * @return void
+     */
+    public function message($message)
     {
         $this->message = $message;
         return $this;
