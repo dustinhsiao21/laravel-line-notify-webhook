@@ -2,8 +2,8 @@
 
 namespace dustinhsiao21\LineNotify\Tests\UnitClass;
 
-use Illuminate\Notifications\Notification;
 use dustinhsiao21\LineNotify\LineMessage;
+use Illuminate\Notifications\Notification;
 
 class TestNotification extends Notification
 {

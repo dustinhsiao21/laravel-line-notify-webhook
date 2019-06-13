@@ -2,10 +2,10 @@
 
 namespace dustinhsiao21\LineNotify\Test;
 
-use Orchestra\Testbench\TestCase;
 use dustinhsiao21\LineNotify\LineMessage;
+use Orchestra\Testbench\TestCase;
 
-class MessageTest extends TestCase
+class LineMessageTest extends TestCase
 {
     protected $message;
 
@@ -23,4 +23,3 @@ class MessageTest extends TestCase
         $this->assertEquals($expected, $message->message);
     }
 }
-
