@@ -1,4 +1,4 @@
-## Webhook notifications channel for Laravel 5.3
+## Webhook notifications channel for Laravel 5.3 [![Build Status](https://travis-ci.org/dustinhsiao21/laravel-line-notify-webhook.svg?branch=master)](https://travis-ci.org/dustinhsiao21/laravel-line-notify-webhook)
 
 #### Requirement
 
