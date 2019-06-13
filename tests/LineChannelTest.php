@@ -2,15 +2,13 @@
 
 namespace dustinhsiao21\LineNotify\Test;
 
-use Mockery;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
-use Orchestra\Testbench\TestCase;
-use Illuminate\Notifications\Notification;
-use dustinhsiao21\LineNotify\LineMessage;
 use dustinhsiao21\LineNotify\LineChannel;
 use dustinhsiao21\LineNotify\Tests\UnitClass\TestNotifiable;
 use dustinhsiao21\LineNotify\Tests\UnitClass\TestNotification;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
+use Mockery;
+use Orchestra\Testbench\TestCase;
 
 class LineChannelTest extends TestCase
 {
@@ -30,11 +28,11 @@ class LineChannelTest extends TestCase
             ->once()
             ->with(LineChannel::END_POINT, [
                 'headers' => [
-                    'Authorization' => 'Bearer ' .TestNotifiable::TOKEN,
+                    'Authorization' => 'Bearer '.TestNotifiable::TOKEN,
                 ],
                 'form_params' => [
                     'message' => 'foo',
-                ]
+                ],
             ])
             ->andReturn($response);
 
@@ -43,9 +41,9 @@ class LineChannelTest extends TestCase
     }
 
     /**
-    * @expectedException Exception
-    * @test
-    */
+     * @expectedException Exception
+     * @test
+     */
     public function testSendFail()
     {
         $response = new Response(500);
